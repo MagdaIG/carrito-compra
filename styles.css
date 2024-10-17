@@ -364,6 +364,31 @@ button {
     width: 100%;
     max-width: 600px; /* Define un ancho máximo para que no sea demasiado ancho en pantallas grandes */
 }
+.titulo-final{
+    display: flex;
+    background-color:rgba(255, 236, 137, 0.98);
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.65);
+    padding: 20px; /* Añadido más padding para darle más espacio al contenedor */
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px; /* Define un ancho máximo para que no sea demasiado ancho en pantallas grandes */
+}
+
+.section-final {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(223, 98, 131, 0.84);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
 
 /* Estilos para el resumen del carrito */
 .resumen-compra {

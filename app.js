@@ -25,7 +25,6 @@ class Carrito {
         this.mostrarResumen();
     }
 
-
     calcularTotal() {
         let total = this.productos.reduce((suma, producto) => suma + producto.producto.precio * producto.cantidad, 0);
         return total;
@@ -57,9 +56,17 @@ class Carrito {
             alert('No tienes productos en tu carrito.');
             return;
         }
-        alert(`Total de la compra: $${this.calcularTotal().toFixed(0)}\n¡Gracias por tu compra!`);
+
+        // Actualiza el contenido del modal con el total de la compra
+        const total = this.calcularTotal();
+        document.getElementById('totalCompraModal').innerText = `El total de tu compra es: $${total.toFixed(0)}`;
+
+        // Abre el modal de finalización de compra
+        abrirModal('finalizarCompraModal');
+
+        // Limpia el carrito y el resumen después de la compra
         this.productos = [];
-        this.mostrarResumen();  // Limpiar el resumen después de la compra
+        this.mostrarResumen();
     }
 }
 
@@ -162,3 +169,35 @@ document.getElementById('finalizarCompra').addEventListener('click', () => {
     carrito.finalizarCompra(); // Finaliza la compra y vacía el carrito
     iniciarCompraModal.style.display = "none"; // Cierra el modal
 });
+
+// *** Modal para mostrar el total de la compra ***
+const finalizarCompraModal = document.getElementById('finalizarCompraModal');
+const spanCloseFinalizarCompra = finalizarCompraModal.getElementsByClassName('close')[0];
+
+// Función para abrir el modal
+function abrirModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'block';
+}
+
+// Función para cerrar el modal
+function cerrarModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'none';
+}
+
+// Cerrar el modal de compra al hacer clic en la "X" o el botón de cerrar
+spanCloseFinalizarCompra.onclick = function() {
+    cerrarModal('finalizarCompraModal');
+}
+
+document.getElementById('cerrarCompraModal').addEventListener('click', function() {
+    cerrarModal('finalizarCompraModal');
+});
+
+// Cerrar el modal cuando el usuario haga clic fuera del contenido del modal
+window.onclick = function(event) {
+    if (event.target === finalizarCompraModal) {
+        cerrarModal('finalizarCompraModal');
+    }
+}

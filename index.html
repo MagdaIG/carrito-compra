@@ -164,9 +164,7 @@
                 <button id="agregarProducto"> <i class="fas fa-shopping-cart"></i> Agregar al carrito</button>
                 <button id="finalizarCompra"><i class="fas fa-credit-card"></i> Finalizar compra</button>
 
-
             </div>
-
 
             <!-- Resumen de la compra -->
             <div class="resumen-compra">
@@ -177,6 +175,22 @@
             </div>
         </div>
     </div>
+    <!-- Modal para mostrar el total de la compra -->
+    <div id="finalizarCompraModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="titulo-final">
+            <h2>¡Gracias por tu compra!</h2>
+            </div>
+            <div class="section-final">
+                <p id="totalCompraModal"> <strong> El total de tu compra es: $0 </strong></p>
+            </div>
+            <div class="ir-al-carrito">
+            <button id="cerrarCompraModal">Cerrar</button>
+                </div>
+        </div>
+    </div>
+
 
     <!-- Footer dentro del contenedor principal -->
     <footer class="text-white text-center p-3 mt-4">
