@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="page-wrapper">
+    <header>
+        <h1>¡Bienvenido! <br> Tu carrito de compra</h1>
+    </header>
+
+    <!-- Contenedor transparente centrado -->
+    <main class="container-transparente">
+        <div class="container">
+            <div class="buttons">
+                <button id="ver-productos"><i class="fas fa-list"></i> Productos disponibles</button>
+                <button id="iniciar-compra"><i class="fas fa-shopping-cart"></i> Iniciar tu compra</button>
+            </div>
+
+            <div class="section-container">
+                <div class="section">
+                    <h2>Ofertas del día</h2>
+                    <p>¡No te pierdas nuestras ofertas especiales! Productos frescos y de calidad para ti.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <img src="img/carrito.png" alt="Carrito de compras" class="cart-img">
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal independiente para mostrar productos -->
+    <div id="productosModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Productos disponibles</h2>
+            <div class="product-list">
+                <!-- Producto 1 -->
+                <div class="product-card">
+                    <img src="img/leche.png" alt="Leche" class="product-image">
+                    <div class="product-info">
+                        <h3>Leche</h3>
+                        <p>Un litro de leche fresca, ideal para tus desayunos o recetas. Alta en calcio y esencial para mantener huesos fuertes.</p>
+                        <div class="rating">★★★★☆</div>
+                        <p class="price">$1000</p>
+                        <label for="cantidad-1">Cantidad:</label>
+                        <input type="number" id="cantidad-1" min="1" value="1" class="cantidad-producto">
+                        <button class="add-to-cart" data-producto-index="0">Agregar al carrito</button>
+                    </div>
+                    <div class="favorite-icon">
+                        <span class="heart">♥</span>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="product-card">
+                    <img src="img/pan-de-molde.png" alt="Pan de Molde" class="product-image">
+                    <div class="product-info">
+                        <h3>Pan de Molde</h3>
+                        <p>Pan suave y esponjoso, perfecto para preparar sandwiches o tostadas. Hecho con ingredientes de la mejor calidad.</p>
+                        <div class="rating">★★★★☆</div>
+                        <p class="price">$2000</p>
+                        <label for="cantidad-2">Cantidad:</label>
+                        <input type="number" id="cantidad-2" min="1" value="1" class="cantidad-producto">
+                        <button class="add-to-cart" data-producto-index="1">Agregar al carrito</button>
+                    </div>
+                    <div class="favorite-icon">
+                        <span class="heart">♥</span>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="product-card">
+                    <img src="img/queso.png" alt="Queso" class="product-image">
+                    <div class="product-info">
+                        <h3>Queso</h3>
+                        <p>Queso fresco, ideal para acompañar tus comidas o disfrutar solo. Rico en proteínas y calcio.</p>
+                        <div class="rating">★★★★☆</div>
+                        <p class="price">$1200</p>
+                        <label for="cantidad-3">Cantidad:</label>
+                        <input type="number" id="cantidad-3" min="1" value="1" class="cantidad-producto">
+                        <button class="add-to-cart" data-producto-index="2">Agregar al carrito</button>
+                    </div>
+                    <div class="favorite-icon">
+                        <span class="heart">♥</span>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="product-card">
+                    <img src="img/mermelada.png" alt="Mermelada" class="product-image">
+                    <div class="product-info">
+                        <h3>Mermelada</h3>
+                        <p>Mermelada de frutas naturales, sin conservantes. Un toque dulce y delicioso para tus panes o postres.</p>
+                        <div class="rating">★★★☆☆</div>
+                        <p class="price">$890</p>
+                        <label for="cantidad-4">Cantidad:</label>
+                        <input type="number" id="cantidad-4" min="1" value="1" class="cantidad-producto">
+                        <button class="add-to-cart" data-producto-index="3">Agregar al carrito</button>
+                    </div>
+                    <div class="favorite-icon">
+                        <span class="heart">♥</span>
+                    </div>
+                </div>
+
+                <!-- Producto 5 -->
+                <div class="product-card">
+                    <img src="img/sugar.png" alt="Azúcar" class="product-image">
+                    <div class="product-info">
+                        <h3>Azúcar</h3>
+                        <p>Azúcar refinada de alta calidad. Perfecta para endulzar bebidas, postres o para tus recetas favoritas.</p>
+                        <div class="rating">★★★★☆</div>
+                        <p class="price">$1300</p>
+                        <label for="cantidad-5">Cantidad:</label>
+                        <input type="number" id="cantidad-5" min="1" value="1" class="cantidad-producto">
+                        <button class="add-to-cart" data-producto-index="4">Agregar al carrito</button>
+                    </div>
+                    <div class="favorite-icon">
+                        <span class="heart">♥</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón adicional para ir al carrito -->
+            <button id="irAlCarrito">Ir al carrito</button>
+        </div>
+    </div>
+
+    <!-- Modal para "Iniciar tu compra" -->
+    <div id="iniciarCompraModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Iniciar tu compra</h2>
+
+            <!-- Selección de productos -->
+            <label for="productoSelect">Selecciona un producto:</label>
+            <select id="productoSelect">
+                <option value="0">Leche - $1000</option>
+                <option value="1">Pan de Molde - $2000</option>
+                <option value="2">Queso - $1200</option>
+                <option value="3">Mermelada - $890</option>
+                <option value="4">Azúcar - $1300</option>
+            </select>
+
+            <!-- Entrada para la cantidad -->
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" min="1" value="1">
+
+            <!-- Botones para continuar o finalizar -->
+            <button id="agregarProducto">Agregar al carrito</button>
+            <button id="finalizarCompra">Finalizar compra</button>
+
+            <!-- Resumen de la compra -->
+            <h3>Resumen del carrito</h3>
+            <div id="resumenCompra">
+                <p>Aún no has agregado productos.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer dentro del contenedor principal -->
+    <footer class="text-white text-center p-3 mt-4">
+        <p>© 2024 Todos los derechos reservados - Magdalena Inalaf G.</p>
+    </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+

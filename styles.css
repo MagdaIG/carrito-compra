@@ -1,0 +1,389 @@
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* el body ocupa toda la altura de la pantalla */
+}
+
+h1, h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+p, label {
+    font-family: 'Roboto', sans-serif;
+    color: #ccc;
+}
+
+h1 {
+    font-size: 42px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url("img/img.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: -1;
+}
+
+/* Wrapper que contiene todo el contenido y deja el footer al final */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+/* Contenedor principal del contenido */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Contenedor transparente */
+.container-transparente {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 20px auto;
+    max-width: 90%;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .container-transparente {
+        max-width: 95%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-transparente {
+        max-width: 100%;
+        padding: 5px;
+    }
+}
+
+/* Estilos del header */
+header {
+    background-color: rgba(223, 98, 131, 0.84);
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 36px;
+    width: 100%;
+}
+header, .container {
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Botones */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: rgba(246, 139, 0, 0.86);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #731111;
+}
+
+/* Sección ofertas */
+.section-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(46, 122, 105, 0.92);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.section {
+    text-align: center;
+    color: #fff;
+}
+
+/* Animación del carrito */
+.cart-img {
+    width: 150px;
+    margin-top: 10px;
+    animation: moverCarrito 3s infinite ease-in-out;
+}
+
+/* Estilos para el contenedor del modal */
+.modal {
+    color: white;
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.32);
+}
+
+.modal-content {
+    background-color: rgba(44, 43, 48, 0.9);
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Estilos de la lista de productos */
+.product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.product-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3c3b40;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+}
+
+.product-info {
+    flex: 1;
+    margin-left: 15px;
+    color: #fff;
+}
+
+.product-info h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #f0f0f0;
+}
+
+.product-info p {
+    font-size: 14px;
+    color: #b0b0b0;
+}
+
+.rating {
+    font-size: 14px;
+    color: gold;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.add-to-cart {
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: rgba(46, 122, 105, 0.92);
+}
+
+/* Estilos para el ícono de corazón */
+.favorite-icon {
+    margin-left: 10px;
+}
+
+.heart {
+    font-size: 24px;
+    color: rgba(255, 77, 77, 0.87);
+    cursor: pointer;
+}
+
+.heart:hover {
+    color: #ff1a1a;
+}
+
+/* Estilos para la "X" del cerrar */
+.close {
+    color: #ff0000;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal contenido */
+label {
+    display: block;
+    margin-top: 15px;
+    color: #fff;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: rgba(255, 236, 137, 0.89);
+    color: #2c2b30;
+}
+
+/* Resumen del carrito */
+#resumenCompra {
+    background-color: #444;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 20px;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 15px 0;
+    border-top: 2px solid rgba(223, 98, 131, 0.84);
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+/* Animación del carrito */
+@keyframes moverCarrito {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(50px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    header {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .cart-img {
+        width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .cart-img {
+        width: 80px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+
+
+
