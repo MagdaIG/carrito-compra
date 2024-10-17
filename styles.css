@@ -121,23 +121,6 @@ header, .container {
     gap: 20px;
 }
 
-button {
-    width: 200px;
-    height: 60px;
-    font-size: 20px;
-    padding: 10px 20px;
-    color: #fff;
-    background-color: rgba(246, 139, 0, 0.86);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #731111;
-}
-
 /* Sección ofertas */
 .section-container {
     display: flex;
@@ -182,6 +165,7 @@ button:hover {
     border-radius: 10px;
     width: 90%;
     max-width: 600px;
+    justify-content: center;
 }
 
 /* Estilos de la lista de productos */
@@ -298,6 +282,15 @@ input, select {
     border: 1px solid #ccc;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los botones */
+    margin-top: 20px;
+}
+
+
+/* Estilo base de los botones */
 button {
     background-color: #ff7f50;
     color: white;
@@ -307,32 +300,110 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 10px;
+    text-align: center;
 }
 
+/* Efecto hover */
 button:hover {
     background-color: rgba(255, 236, 137, 0.89);
     color: #2c2b30;
 }
 
-/* Resumen del carrito */
+/* Centrado para pantallas grandes */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+}
+
+/* Botones toman un ancho adecuado en pantallas grandes */
+button {
+    flex: 1; /* Ocupa espacio igual dentro del contenedor */
+    max-width: 200px; /* Limita el ancho máximo de los botones */
+    text-align: center;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column; /* Cambia la dirección de los botones a vertical */
+        gap: 15px; /* Reduce el espacio entre los botones */
+    }
+
+    button {
+        width: 100%; /
+        max-width: 300px; /* que no sean demasiado anchos en pantallas grandes */
+        padding: 15px; /* Aumenta el padding en pantallas táctiles */
+    }
+}
+.ir-al-carrito {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 100%;
+    transform: scale(1.4); /* Aumento el tamaño en un 40% */
+}
+
+.titulo-inicio{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.65);
+    background-color: rgba(255, 236, 137, 0.98);
+    padding: 20px; /* Añadido más padding para darle más espacio al contenedor */
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px; /* Define un ancho máximo para que no sea demasiado ancho en pantallas grandes */
+}
+
+/* Estilos para el resumen del carrito */
+.resumen-compra {
+    display: flex;
+    flex-direction: column; /* el título y el contenido se apilen verticalmente */
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(46, 122, 105, 0.92);
+    padding: 20px; /* Añadido más padding para darle más espacio al contenedor */
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px; /* Define un ancho máximo para que no sea demasiado ancho en pantallas grandes */
+}
+
 #resumenCompra {
     background-color: #444;
     padding: 10px;
     border-radius: 5px;
     color: #fff;
-    margin-top: 20px;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
 }
 
-/* Estilos para el footer */
+
 footer {
     background-color: rgb(0, 0, 0);
     color: white;
-    padding: 15px 0;
+    padding: 30px 0; /* Aumenta el espacio vertical con padding */
     border-top: 2px solid rgba(223, 98, 131, 0.84);
     font-size: 14px;
     text-align: center;
     width: 100%;
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
     flex-shrink: 0;
+    margin: 0;
 }
 
 /* Animación del carrito */
@@ -375,7 +446,6 @@ footer {
         font-size: 12px;
         padding: 6px 12px;
     }
-
     .cart-img {
         width: 80px;
     }
@@ -384,6 +454,8 @@ footer {
         font-size: 12px;
     }
 }
+
+
 
 
 

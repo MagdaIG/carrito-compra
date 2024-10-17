@@ -39,7 +39,9 @@
     <div id="productosModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Productos disponibles</h2>
+            <div class="titulo-inicio">
+            <h2 align="center"> Productos disponibles</h2>
+            </div>
             <div class="product-list">
                 <!-- Producto 1 -->
                 <div class="product-card">
@@ -126,9 +128,11 @@
                     </div>
                 </div>
             </div>
-
+            <div class="ir-al-carrito">
             <!-- Botón adicional para ir al carrito -->
-            <button id="irAlCarrito">Ir al carrito</button>
+            <button id="irAlCarrito">Ir al carrito  </button>
+            </div>
+
         </div>
     </div>
 
@@ -136,7 +140,9 @@
     <div id="iniciarCompraModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
+            <div class="titulo-inicio">
             <h2>Iniciar tu compra</h2>
+            </div>
 
             <!-- Selección de productos -->
             <label for="productoSelect">Selecciona un producto:</label>
@@ -152,14 +158,22 @@
             <label for="cantidad">Cantidad:</label>
             <input type="number" id="cantidad" min="1" value="1">
 
-            <!-- Botones para continuar o finalizar -->
-            <button id="agregarProducto">Agregar al carrito</button>
-            <button id="finalizarCompra">Finalizar compra</button>
+            <!-- Contenedor para centrar los botones -->
+            <div class="button-container">
+                <!-- Botones para continuar o finalizar -->
+                <button id="agregarProducto"> <i class="fas fa-shopping-cart"></i> Agregar al carrito</button>
+                <button id="finalizarCompra"><i class="fas fa-credit-card"></i> Finalizar compra</button>
+
+
+            </div>
+
 
             <!-- Resumen de la compra -->
+            <div class="resumen-compra">
             <h3>Resumen del carrito</h3>
             <div id="resumenCompra">
                 <p>Aún no has agregado productos.</p>
+            </div>
             </div>
         </div>
     </div>
