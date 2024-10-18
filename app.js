@@ -201,3 +201,4 @@ window.onclick = function(event) {
         cerrarModal('finalizarCompraModal');
     }
 }
+
